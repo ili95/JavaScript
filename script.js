@@ -1,6 +1,14 @@
 const pullDownButton=document.getElementById('lists')
-console.log(pullDownButton)
 const pullDownParents=document.getElementById('pull-down')
+const pullDownChild=document.querySelectorAll('.pull-down-list')
+const currentList=document.getElementById('current-list')
+pullDownChild.forEach(function(list){
+    list.addEventListener('click',function(){
+        const value=list.innerHTML
+        currentList.innerHTML=value
+        console.log(value)
+    })
+})
 window.addEventListener('load',function(){
     const pullDownButton=document.getElementById('lists')
 })

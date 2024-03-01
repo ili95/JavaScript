@@ -75,6 +75,12 @@ body {
 }
 
 
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+
 .contents{
  height: 100vh;
  background-color: #f0f0f0;
