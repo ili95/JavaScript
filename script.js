@@ -1,19 +1,24 @@
-let lists=document.getElementsByClassName('pull-down-list')
-console.log(lists)
 const pullDownButton=document.getElementById('lists')
 console.log(pullDownButton)
+const pullDownParents=document.getElementById('pull-down')
 window.addEventListener('load',function(){
     const pullDownButton=document.getElementById('lists')
 })
     pullDownButton.addEventListener('mouseover',function(){
-        console.log('のる')
-        pullDownButton.setAttribute('style','background-color:blue;')    
+        this.setAttribute('style','background-color:blue;')
+        console.log('乗ったら青色')    
     }) 
     pullDownButton.addEventListener('mouseout',function(){
-        console.log('外れる')
-        pullDownButton.removeAttribute('style','background-color:red;')
+        this.removeAttribute('style','background-color:red;')
+        console.log('外れて赤色')
     }) 
     pullDownButton.addEventListener('click',function(){
         console.log('クリック')
-        pullDownButton.setAttribute('style','background-color:green;')      
-     })
+        if(pullDownParents.getAttribute('style')=='display:block;'){
+            pullDownParents.removeAttribute('style','display:block;')
+            console.log('非表示')
+        }else{
+            pullDownParents.setAttribute('style','display:block;')
+            console.log('表示')
+        }
+    })
